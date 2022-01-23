@@ -1,11 +1,11 @@
 # Web
 
 Пока він не нахостингу але вже зараз можна приєднатися декільком і поговорити.
-Для цього вам потрібен ngrok.
+Для цього вам потрібен `ngrok`, який вже находиться в папці проекта.
 
 Щоб все працювало консолі виконайте наступні дії:
 
-Windows:
+## Windows
 ```
 pip install virtualenv
 virtualenv env
@@ -19,9 +19,8 @@ python manage.py runserver
 ```
 ngrok.exe http 8000
 ```
-І відправте другу вот цей адрес.
 
-Linux:
+## Linux
 
 ```
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null &&
@@ -40,3 +39,7 @@ python manage.py runserver
 ```
 ngrok.exe http 8000
 ```
+
+І відправте другу вот цей адрес.
+
+![image](https://user-images.githubusercontent.com/68950796/150699965-ef2006e3-cc7f-40d0-a47e-4813d45c43fa.png)
