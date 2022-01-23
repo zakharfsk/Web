@@ -3,11 +3,13 @@
 Пока він не нахостингу але вже зараз можна приєднатися декільком і поговорити.
 Для цього вам потрібен ngrok.
 
-Щоб все працювало консолі в папці установіть залежні бібліотеки і запустіть сервер:
+Щоб все працювало консолі виконайте наступні дії:
 
-```
+```cmd
+pip install virtualenv
+virtualenv env
+env\Scripts\activate.bat
 pip install -r requirements.txt
-
 python manage.py runserver
 ```
 
