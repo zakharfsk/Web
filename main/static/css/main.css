@@ -1,0 +1,205 @@
+html{
+    font-size: 20px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+body{
+    margin: 0;
+}
+header{
+    padding: 15px;
+    margin-bottom: 75px;
+    text-align: center;
+    background: #008C8C;
+}
+header p{
+    margin: 0;
+    color: white;
+
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+.main-menu{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 75px;
+}
+.main-menu p{
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 5px solid transparent;
+    transition: all .5s ease;
+    font-size: 23px;
+    cursor: pointer;
+}
+.main-menu .room-join-form-btm{
+    transform: scale(1.25);
+    border-color: #008C8C;
+}
+.creat-room{
+    display: none;
+}
+.join-room,
+.creat-room{
+    margin: 0 auto;
+    width: 50%;
+    min-height: 360px;
+}
+.join-room input,
+.creat-room input{
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    width: 92.5%;
+    color: black;
+    border: 5px solid #008C8C;
+    text-align: center;
+    font-size: 25px;
+}
+.join-room label:last-child input,
+.creat-room label:last-child input{
+    margin-bottom: 0;
+}
+.user-foto-chang{
+    display: block;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    width: 94%;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    background: #008C8C;
+    cursor: pointer;
+}
+.user-foto-chang input{
+    display: none;
+}
+.form-submit input{
+    width: 100%;
+    color: white;
+    background: #008C8C;
+}
+.passStatusBox{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.creat-room .passStatus{
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    margin-right: 15px;
+}
+.room-list ul{
+    padding: 0;
+    list-style: none;
+}
+.room{
+    position: relative;
+    margin-bottom: 10px;
+    padding: 20px 50px;
+    padding-right: 75px;
+    border: 5px solid #008C8C;
+    transition: all .5s ease;
+}
+.room:last-child{
+    margin: 0;
+}
+.room:hover{
+    transform: scale(1.025);
+}
+.room-title{
+    margin-bottom: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+.room p{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.room-lock:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(-2%, -50%);
+    width: 25px;
+    height: 25px;
+    background: url(../img/lock2.png) no-repeat;
+    background-size: contain;
+}
+.room .list-room-join{
+    position: absolute;
+    padding: 7px 12px;
+    left: 50%;
+    top: 50%;
+    color: white;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background: #008C8C;
+    transition: all .5s ease;
+}
+.list-room-join input{
+    padding: 0 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+.room:hover .list-room-join{
+    opacity: 1;
+}
+.room .join-room-btm {
+    cursor: pointer;
+}
+.video-container{
+    padding: 15px;
+    text-align: center;
+    background: #008C8C;
+}
+.user{
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+    width: 30%;
+}
+.user-video video{
+    max-width: 100%;
+    min-width: 100%;
+    background: #000;
+}
+.user-logo{
+    position: absolute;
+    padding: 5px;
+    top: 2%;
+    left: 45%;
+    color: white;
+    background: #008C8C;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.button-box{
+    position: absolute;
+    bottom: 3%;
+    left: 10%;
+}
+.button-box button{
+    margin-right: 10px;
+    padding: 10px 15px;
+    color: white;
+    background: #008C8C;
+    border: 1px solid #008C8C;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.button-box button:last-child{
+    margin-right: 0;
+}
+.user:hover .user-logo{
+    opacity: .5;
+}
+.button-box button:hover{
+    transform: scale(1.09);
+}
