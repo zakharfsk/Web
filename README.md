@@ -1,6 +1,6 @@
 # Web
 
-Link: [zakharfsk.site](https:\\zakharfsk.site)
+Link: [zakharfsk.site](https://zakharfsk.site)
 
 Якщо ви хочете локально, тоді для цього вам потрібен `ngrok`, який вже находиться в папці проекта.
 
