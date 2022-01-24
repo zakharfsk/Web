@@ -1,23 +1,44 @@
-let profileBtm = document.querySelector(".profile-btm"),
-    createRoomBtm = document.querySelector(".room-create-btm"),
-    userDataBox = document.querySelector(".user-data"),
-    creatRoomBox = document.querySelector(".creat-room");
+let createRoomBtm = document.querySelector(".room-create-btm"),
+    roomJoinBtm = document.querySelector(".room-join-form-btm"),
+    joinRoomBox = document.querySelector(".join-room"),
+    creatRoomBox = document.querySelector(".creat-room"),
+    passStatus = document.querySelector(".passStatus"),
+    passInput = document.querySelector(".passInputCreat");
 
-    profileBtm.onclick = showUserData;
+    passEnable();
+    passStatus.onclick = passEnable;
+    roomJoinBtm.onclick = showRoomJoin;
     createRoomBtm.onclick = showCreatRoom;
+    
+    
+function passEnable(){
+    if(passStatus.checked == true){
+        passInput.style.background = "lightslategray";
+        passInput.disabled = "disabled";
 
+    }
+    if(passStatus.checked == false){
+        passInput.style.background = "white"; 
+        passInput.disabled = false; 
+    }
+}
 
-function showUserData(){
-    userDataBox.style.display = "block";
+function showRoomJoin(){
+    joinRoomBox.style.display = "block";
     creatRoomBox.style.display = "none";
-    profileBtm.style.transform = "scale(1.1)";
+    roomJoinBtm.style.transform = "scale(1.25)";
     createRoomBtm.style.transform = "scale(1)";
+    roomJoinBtm.style.borderColor = "#008C8C";
+    createRoomBtm.style.borderColor = "transparent";
+    
 }
 function showCreatRoom(){
-    userDataBox.style.display = "none";
+    joinRoomBox.style.display = "none";
     creatRoomBox.style.display = "block";
-    createRoomBtm.style.transform = "scale(1.1)";
-    profileBtm.style.transform = "scale(1)";
+    createRoomBtm.style.transform = "scale(1.25)";
+    createRoomBtm.style.borderColor = "#008C8C";
+    roomJoinBtm.style.transform = "scale(1)";
+    roomJoinBtm.style.borderColor = "transparent";
 }
 
 
@@ -28,8 +49,6 @@ let localStream = new MediaStream();
 
 let usernameInput = document.querySelector('#username');
 let btnJoin = document.querySelector('#btn-join');
-
-let messageList = document.querySelector('#message-list');
 
 let btnSendMsg = document.querySelector('#btn-send-msg');
 let messageList = document.querySelector('#message-list');
@@ -78,17 +97,11 @@ function webSoketOnMessage(event) {
 btnJoin.addEventListener('click', () => {
     username = usernameInput.value;
 
-    console.log('username: ', username);
 
     if (username == '') {
         return;
     }
-    usernameInput.value = '';
-    usernameInput.disabled = true;
-    usernameInput.style.visibility = 'hidden';
-
-    btnJoin.disabled = true;
-    btnJoin.style.visibility = 'hidden';
+    usernameInput.value = username;
 
     let labelUsername = document.querySelector('#label-username');
     labelUsername.innerHTML = username;
@@ -324,10 +337,15 @@ function createVideo(peerUsername) {
     remoteVideo.playsInline = true;
 
     let videoWrapper = document.createElement('div');
+    let userBox = document.createElement('div');
 
+    
     videoContainer.appendChild(videoWrapper);
+    videoWrapper.appendChild(userBox);
+    userBox.appendChild(remoteVideo);
 
-    videoWrapper.appendChild(remoteVideo);
+    videoWrapper.classList = "user ";
+    userBox.classList = "user-video";
 
     return remoteVideo;
 }
