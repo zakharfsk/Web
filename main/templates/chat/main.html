@@ -7,83 +7,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Cam</title>
+    <title>Web Scam</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
 
 <body>
     <header>
         <div class="wrapper">
+            <div class="back-main-page">Leave</div>
             <p>The Silver Beasts</p>
         </div>
     </header>
-    <div class="wrapper">
-        <section>
-            <div class="main-menu">
-                <p class="room-join-form-btm">Join room</p>
-                <p class="room-create-btm">Creat room</p>
-            </div>
-            <div class="join-room">
-                <form action="." method="GET">
-                    <label><input type="text" name="username" id="username" maxlength="20" placeholder="Your name"></label>
-                    <label><input type="text" name="nameRoom" placeholder="Name room"></label>
-                    <label><input type="password" class="passInput" name="passInput" placeholder="Password"></label>
-                    <label class="form-submit"><input type="button" id="btn-join" value="Join"></label>
-                </form>
-            </div>
-            <div class="creat-room">
-                <form action="." method="POST">
-                    <label><input type="text" name="nameRoom" placeholder="Name room"></label>
-                    <label><input type="number" name="countPeople" placeholder="Count of people"></label>
-                    <label class="passStatusBox"><input type="checkbox" class="passStatus" name="passStatus" checked>Enamblet password</label>
-                    <label><input type="password" class="passInputCreat" name="passInput" placeholder="Password" required></label>
-                    <label class="form-submit"><input type="submit" value="Created"></label>
-                </form>
-            </div>
-        </section>
-        <section class="room-list">
-            <p class="room-title">Rooms history</p>
-            <ul>
-                <li class="room">
-                    <p class="room-lock">Room 1<span class="room-count">5/10</span></p>
-                    <form action="." method="post" class="list-room-join">
-                        <label><input type="password" name="" id="" placeholder="password" required></label>
-                        <span class="join-room-btm" id="btn-join"> Join</span>
+    <main>
+        <div class="wrapper main-page">
+            <section>
+                <div class="main-menu">
+                    <p class="room-join-form-btm">Join room</p>
+                    <p class="room-create-btm">Creat room</p>
+                </div>
+                <div class="join-room">
+                    <form action="." method="GET">
+                        <label><input type="text" name="username" id="username" maxlength="20" placeholder="Your name"></label>
+                        <label><input type="text" name="nameRoom" placeholder="Name room"></label>
+                        <label><input type="password" class="passInput" name="passInput" placeholder="Password"></label>
+                        <label class="form-submit"><input type="button" id="btn-join" value="Join"></label>
                     </form>
-                </li>
-                <li class="room">
-                    <p>Room 2<span class="room-count">5/10</span></p>
-                    <div class="list-room-join">
-                        <span class="join-room-btm" id="btn-join"> Join</span>
+                </div>
+                <div class="creat-room">
+                    <form action="." method="POST">
+                        <label><input type="text" name="nameRoom" placeholder="Name room"></label>
+                        <label><input type="number" name="countPeople" placeholder="Count of people"></label>
+                        <label class="passStatusBox"><input type="checkbox" class="passStatus" name="passStatus" checked>Enamblet password</label>
+                        <label><input type="password" class="passInputCreat" name="passInput" placeholder="Password" required></label>
+                        <label class="form-submit"><input type="submit" value="Created"></label>
+                    </form>
+                </div>
+            </section>
+            <section class="room-list">
+                <p class="room-title">Rooms history</p>
+                <ul>
+                    <li class="room">
+                        <p class="room-lock">Room 1<span class="room-count">5/10</span></p>
+                        <form action="." method="post" class="list-room-join">
+                            <label><input type="password" name="" id="" placeholder="password" required></label>
+                            <span class="join-room-btm" id="btn-join"> Join</span>
+                        </form>
+                    </li>
+                    <li class="room">
+                        <p>Room 2<span class="room-count">5/10</span></p>
+                        <div class="list-room-join">
+                            <span class="join-room-btm" id="btn-join"> Join</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="wrapper room-page">
+            <div class="video-container" id="video-container">
+                <div class="user">
+                    <p class="user-logo" id="label-username"></p>
+                    <div class="user-video"><video id="local-video" autoplay playsinline></video></div>
+                    <div class="button-box">
+                        <button id="btn-toggle-audio">Audio Mute</button>
+                        <button id="btn-toggle-video">Video Mute</button>
                     </div>
-                </li>
-            </ul>
-        </section>
-    </div>
-    
-
-    
-
-    <div class="wrapper">
-        <div class="video-container" id="video-container">
-            <div class="user">
-                <p class="user-logo" id="label-username"></p>
-                <div class="user-video"><video id="local-video" autoplay playsinline></video></div>
-                <div class="button-box">
-                    <button id="btn-toggle-audio">Audio Mute</button>
-                    <button id="btn-toggle-video">Video Mute</button>
                 </div>
             </div>
+    
+            <!-- <div id="chat">
+                <h3>CHAT</h3>
+                <div id="messages"></div>
+                <ul id="message-list"></ul>
+            </div>
+            <div><input id="msg"><button id="btn-send-msg">Send Message</button></div> -->
+            <!-- <button id="btn-share-screen">Share Screen</button> -->
         </div>
-
-        <!-- <div id="chat">
-            <h3>CHAT</h3>
-            <div id="messages"></div>
-            <ul id="message-list"></ul>
-        </div>
-        <div><input id="msg"><button id="btn-send-msg">Send Message</button></div> -->
-        <!-- <button id="btn-share-screen">Share Screen</button> -->
-    </div>
+    </main>
 
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>

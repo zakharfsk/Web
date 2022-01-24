@@ -3,13 +3,22 @@ let createRoomBtm = document.querySelector(".room-create-btm"),
     joinRoomBox = document.querySelector(".join-room"),
     creatRoomBox = document.querySelector(".creat-room"),
     passStatus = document.querySelector(".passStatus"),
-    passInput = document.querySelector(".passInputCreat");
+    passInput = document.querySelector(".passInputCreat"),
+    mainPage = document.querySelector(".main-page"),
+    roomPage = document.querySelector(".room-page"),
+    backMainPage = document.querySelector(".back-main-page");
 
     passEnable();
+    backMainPage.onclick = backToMainPage;
     passStatus.onclick = passEnable;
     roomJoinBtm.onclick = showRoomJoin;
     createRoomBtm.onclick = showCreatRoom;
     
+    function backToMainPage(){
+        mainPage.style.display = "block";
+        roomPage.style.display = "none";
+        backMainPage.style.display = "none";
+    }
     
 function passEnable(){
     if(passStatus.checked == true){
@@ -24,7 +33,7 @@ function passEnable(){
 }
 
 function showRoomJoin(){
-    joinRoomBox.style.display = "block";
+    joinRoomBox.style.display = "flex";
     creatRoomBox.style.display = "none";
     roomJoinBtm.style.transform = "scale(1.25)";
     createRoomBtm.style.transform = "scale(1)";
@@ -34,7 +43,7 @@ function showRoomJoin(){
 }
 function showCreatRoom(){
     joinRoomBox.style.display = "none";
-    creatRoomBox.style.display = "block";
+    creatRoomBox.style.display = "flex";
     createRoomBtm.style.transform = "scale(1.25)";
     createRoomBtm.style.borderColor = "#008C8C";
     roomJoinBtm.style.transform = "scale(1)";
@@ -97,7 +106,9 @@ function webSoketOnMessage(event) {
 btnJoin.addEventListener('click', () => {
     username = usernameInput.value;
 
-
+    mainPage.style.display = "none";
+    roomPage.style.display = "block";
+    backMainPage.style.display = "block";
     if (username == '') {
         return;
     }

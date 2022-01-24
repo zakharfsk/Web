@@ -7,10 +7,21 @@ body{
     margin: 0;
 }
 header{
-    padding: 15px;
-    margin-bottom: 75px;
+    padding: 15px 0;
+    margin-bottom: 50px;
     text-align: center;
     background: #008C8C;
+}
+header .wrapper{
+    position: relative;
+}
+.back-main-page{
+    display: none;
+    padding: 5px 10px;
+    position: absolute;
+    left: 0;
+    color: white;
+    cursor: pointer;
 }
 header p{
     margin: 0;
@@ -39,14 +50,16 @@ header p{
     transform: scale(1.25);
     border-color: #008C8C;
 }
-.creat-room{
-    display: none;
-}
 .join-room,
 .creat-room{
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     width: 50%;
     min-height: 360px;
+}
+.creat-room{
+    display: none;
 }
 .join-room input,
 .creat-room input{
@@ -81,6 +94,7 @@ header p{
     width: 100%;
     color: white;
     background: #008C8C;
+    cursor: pointer;
 }
 .passStatusBox{
     display: flex;
@@ -164,10 +178,13 @@ header p{
     position: relative;
     margin: 20px;
     width: 30%;
+    height: 250px;
 }
 .user-video video{
     max-width: 100%;
     min-width: 100%;
+    min-height: 250px;
+    max-height: 250px;
     background: #000;
 }
 .user-logo{
@@ -202,4 +219,48 @@ header p{
 }
 .button-box button:hover{
     transform: scale(1.09);
+}
+.main-page,
+.room-page{
+    margin-bottom: 50px;
+}
+.main-page section:first-child {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 3px solid #008C8C;
+}
+.room-page{
+    display: none;
+}
+
+@media screen and (max-width: 1024px){
+    .join-room,
+    .creat-room{
+        width: 100%;
+    }
+    .join-room input,
+    .creat-room input{
+        width: 300px;
+    }
+    .form-submit input{
+        width: 300px;
+    }
+    .user{
+       width: 20%;
+    }
+    .button-box button{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .user{
+        display: block;
+        width: auto;
+    }
+    .button-box button{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
 }
